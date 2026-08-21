@@ -1,0 +1,121 @@
+/* ==========================================================================
+   PromptRoaRs AI — Design Tokens
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:        #0D0B1A;
+  --ink-2:      #14112A;
+  --surface:    rgba(255,255,255,0.055);
+  --surface-2:  rgba(255,255,255,0.09);
+  --border:     rgba(255,255,255,0.12);
+  --border-hi:  rgba(255,255,255,0.22);
+  --violet:     #7C5CFF;
+  --violet-dim: #5A3FD1;
+  --amber:      #FFB238;
+  --amber-dim:  #CC8A1F;
+  --mint:       #35D399;
+  --coral:      #FF6B6B;
+  --text-hi:    #F5F3FB;
+  --text:       #C9C3DE;
+  --text-mute:  #8A82A8;
+  --f-display: 'Bricolage Grotesque', 'Inter', sans-serif;
+  --f-body:    'Inter', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --shadow-glow: 0 0 0 1px var(--border), 0 20px 60px -20px rgba(124,92,255,0.35);
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(124,92,255,0.16), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(255,178,56,0.10), transparent 55%),
+    var(--ink);
+  color:var(--text);
+  font-family:var(--f-body);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  color:var(--text-hi);
+  margin:0 0 .4em;
+  letter-spacing:-0.01em;
+  font-weight:700;
+}
+p{line-height:1.6;color:var(--text);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;}
+::selection{background:var(--violet);color:#fff;}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  font-family:var(--f-mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--amber);
+}
+
+.glass{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.glass:hover{border-color:var(--border-hi);}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:var(--r-pill);
+  font-weight:600;font-size:14.5px;border:1px solid transparent;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+  white-space:nowrap;
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{
+  background:linear-gradient(135deg, var(--violet), #9A7CFF);
+  color:#fff;
+  box-shadow:0 8px 24px -8px rgba(124,92,255,0.6);
+}
+.btn-primary:hover{box-shadow:0 12px 32px -8px rgba(124,92,255,0.8);transform:translateY(-1px);}
+.btn-amber{
+  background:linear-gradient(135deg, var(--amber), #FFCE7A);
+  color:#241704;
+  box-shadow:0 8px 24px -8px rgba(255,178,56,0.55);
+}
+.btn-amber:hover{box-shadow:0 12px 32px -8px rgba(255,178,56,0.75);transform:translateY(-1px);}
+.btn-ghost{
+  background:var(--surface);
+  border-color:var(--border);
+  color:var(--text-hi);
+}
+.btn-ghost:hover{border-color:var(--border-hi);background:var(--surface-2);}
+.btn-sm{padding:9px 16px;font-size:13px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:var(--r-pill);
+  font-size:12px;font-weight:600;
+  background:var(--surface-2);border:1px solid var(--border);
+  color:var(--text);
+}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--mint);}
+
+.roar-bar{display:flex;align-items:flex-end;gap:3px;height:22px;}
+.roar-bar span{
+  width:3px;border-radius:2px;
+  background:linear-gradient(180deg, var(--amber), var(--violet));
+  animation:roar 1.1s ease-in-out infinite;
+  transform-origin:bott
