@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PromptRoaRs AI — The Marketplace for AI Prompts</title>
+<meta name="description" content="Buy, sell and discover battle-tested prompts for ChatGPT, Claude, Gemini, Midjourney, Runway and more.">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm"><span class="full">Wallet ·</span> <span data-wallet-balance></span></a>
+      <a href="marketplace.html" class="btn btn-primary btn-sm">Browse Prompts</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">The marketplace for AI prompts</span>
+      <h1>Stop guessing.<br>Start <em>roaring</em> with better prompts.</h1>
+      <p class="lead">PromptRoaRs AI is where creators buy and sell battle-tested prompts for ChatGPT, Claude, Gemini, Midjourney, Runway, Sora and every tool in between.</p>
+      <div class="hero-actions">
+        <a href="marketplace.html" class="btn btn-amber">Browse the Marketplace</a>
+        <a href="ai-studio.html" class="btn btn-ghost">Explore AI Studio</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>12,400+</b><span>prompts listed</span></div>
+        <div class="hero-stat"><b>4,800+</b><span>creators earning</span></div>
+        <div class="hero-stat"><b>13</b><span>AI tools supported</span></div>
+      </div>
+    </div>
+    <div class="hero-visual glass">
+      <div>
+        <span class="eyebrow">AI engine</span>
+        <div class="roar-bar"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="hero-visual-label">✨ AI Engine Preparing — Coming Soon</div>
+      </div>
+      <div class="hero-mini-cards">
+        <div class="hero-mini-card">💬 AI Prompt Generator <span class="pill" style="margin-left:auto;">Soon</span></div>
+        <div class="hero-mini-card">🧪 Prompt Improver <span class="pill" style="margin-left:auto;">Soon</span></div>
+        <div class="hero-mini-card">🗨️ AI Chat Studio <span class="pill" style="margin-left:auto;">Soon</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Works with your favorite tools</span>
+        <h2>One marketplace, every AI tool</h2>
+      </div>
+      <a href="ai-studio.html" class="btn btn-ghost btn-sm">View AI Studio →</a>
+    </div>
+    <div class="tool-grid" id="tool-grid-home"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Handpicked</span>
+        <h2>Featured prompts</h2>
+      </div>
+      <a href="marketplace.html" class="btn btn-ghost btn-sm">See all prompts →</a>
+    </div>
+    <div class="prompt-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="glass ai-panel center">
+      <span class="eyebrow">✨ Coming soon</span>
+      <h2 style="margin-top:8px;">The AI engine is warming up</h2>
+      <p style="max-width:52ch;margin:0 auto 20px;">Generation, chat and prompt improvement are being tuned before launch. Everything else — browsing, buying, selling, wallet, referrals — works today.</p>
+      <div class="roar-bar" style="justify-content:center;height:34px;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div style="margin-top:22px;"><a href="ai-studio.html" class="btn btn-primary">Preview AI Studio</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+        <p class="text-mute" style="font-size:13px;margin-top:12px;max-width:32ch;">The marketplace for AI prompts — discover, buy and sell across every major AI tool.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Marketplace</h5>
+        <a href="marketplace.html">Browse Prompts</a>
+        <a href="marketplace.html">Categories</a>
+        <a href="dashboard.html">Sell a Prompt</a>
+      </div>
+      <div class="footer-col">
+        <h5>AI Studio</h5>
+        <a href="ai-studio.html">Prompt Generator</a>
+        <a href="ai-studio.html#improver">Prompt Improver</a>
+        <a href="ai-studio.html#chat">Chat Studio</a>
+      </div>
+      <div class="footer-col">
+        <h5>Account</h5>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="dashboard.html#favorites">Favorites</a>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> PromptRoaRs AI. All rights reserved.</span>
+      <span class="text-mono">Built for creators, powered by community.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ai-services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

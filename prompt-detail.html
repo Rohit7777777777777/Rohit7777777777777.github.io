@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt — PromptRoaRs AI</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html" class="active">Marketplace</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm"><span class="full">Wallet ·</span> <span data-wallet-balance></span></a>
+      <a href="marketplace.html" class="btn btn-primary btn-sm">Browse Prompts</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container" id="prompt-detail-root"></div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> PromptRoaRs AI. All rights reserved.</span>
+      <span class="text-mono">Built for creators, powered by community.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ai-services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

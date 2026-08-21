@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Studio — PromptRoaRs AI</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.tab-btn{padding:10px 18px;border-radius:var(--r-pill);background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:13.5px;font-weight:600;}
+.tab-btn.active{background:var(--violet);border-color:var(--violet);color:#fff;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="ai-studio.html" class="active">AI Studio</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm"><span class="full">Wallet ·</span> <span data-wallet-balance></span></a>
+      <a href="marketplace.html" class="btn btn-primary btn-sm">Browse Prompts</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container">
+    <span class="eyebrow">AI Studio</span>
+    <h1 style="font-size:clamp(26px,3.4vw,38px);margin-top:8px;">Generate, chat, improve.</h1>
+    <p class="text-mute" style="max-width:60ch;margin-bottom:8px;">The full AI toolkit lives here. The engine is currently being prepared — everything below is fully wired and will go live without any changes to this page.</p>
+    <span class="coming-soon-badge" style="margin-bottom:28px;">✨ AI Engine Preparing — Powered by PromptRoaRs AI</span>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="generator">🚀 Prompt Generator</button>
+      <button class="tab-btn" data-tab="improver">🧪 Prompt Improver</button>
+      <button class="tab-btn" data-tab="chat">🗨️ Chat Studio</button>
+      <button class="tab-btn" data-tab="tools">🧰 Tool Directory</button>
+    </div>
+
+    <!-- Prompt Generator -->
+    <div class="tab-panel active" id="panel-generator">
+      <div class="glass ai-panel">
+        <div class="ai-panel-head">
+          <div>
+            <h3 style="margin-bottom:4px;">AI Prompt Generator</h3>
+            <p class="text-mute" style="margin:0;font-size:13px;">Describe your idea, pick a tool and style — we'll write the prompt.</p>
+          </div>
+          <div class="ai-status"><span class="pill-dot"></span> Engine preparing</div>
+        </div>
+        <form id="generator-form">
+          <div class="field">
+            <label class="field-label" for="gen-idea">What's your idea?</label>
+            <textarea class="textarea-input" id="gen-idea" placeholder="e.g. A prompt that writes product descriptions for a handmade jewelry shop" required></textarea>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label" for="gen-tool">AI tool</label>
+              <select class="select-input2" id="gen-tool"></select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="gen-category">Category</label>
+              <select class="select-input2" id="gen-category"></select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="gen-tone">Tone</label>
+              <select class="select-input2" id="gen-tone">
+                <option>Professional</option><option>Playful</option><option>Bold</option><option>Friendly</option><option>Minimal</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label" for="gen-language">Language</label>
+              <select class="select-input2" id="gen-language">
+                <option>English</option><option>Hindi</option><option>Hinglish</option><option>Spanish</option><option>French</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="gen-complexity">Complexity</label>
+              <select class="select-input2" id="gen-complexity">
+                <option>Simple</option><option>Standard</option><option>Advanced</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="generate-btn">Generate Prompt</button>
+        </form>
+        <div id="generator-result"></div>
+      </div>
+    </div>
+
+    <!-- Prompt Improver -->
+    <div class="tab-panel" id="panel-improver">
+      <div class="glass ai-panel" id="improver">
+        <div class="ai-panel-head">
+          <div>
+            <h3 style="margin-bottom:4px;">Prompt Improver</h3>
+            <p class="text-mute" style="margin:0;font-size:13px;">Paste a rough prompt — we'll sharpen structure, clarity and specificity.</p>
+          </div>
+          <div class="ai-status"><span class="pill-dot"></span> Engine preparing</div>
+        </div>
+        <form id="improver-form">
+          <div class="field">
+            <label class="field-label" for="improver-input">Your prompt</label>
+            <textarea class="textarea-input" id="improver-input" placeholder="Paste your existing prompt here…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="improve-btn">Improve Prompt</button>
+        </form>
+        <div id="improver-result"></div>
+      </div>
+    </div>
+
+    <!-- Chat Studio -->
+    <div class="tab-panel" id="panel-chat">
+      <div class="glass ai-panel" id="chat" style="padding:0;overflow:hidden;">
+        <div class="ai-panel-head" style="padding:24px 24px 0;">
+          <div>
+            <h3 style="margin-bottom:4px;">AI Chat Studio</h3>
+            <p class="text-mute" style="margin:0;font-size:13px;">Chat with PromptRoaRs AI to refine ideas before you generate.</p>
+          </div>
+          <div class="ai-status"><span class="pill-dot"></span> Engine preparing</div>
+        </div>
+        <div class="chat-window" id="chat-window">
+          <div class="chat-msg system">Hey! I'm the PromptRoaRs AI assistant. Ask me anything — I'm still warming up my engine, but the studio is ready to go. 👋</div>
+        </div>
+        <form class="chat-input-row" id="chat-form">
+          <input type="text" id="chat-input" class="text-input" placeholder="Type a message…" required>
+          <button type="submit" class="btn btn-amber btn-sm">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tool Directory -->
+    <div class="tab-panel" id="panel-tools">
+      <div class="glass ai-panel">
+        <h3 style="margin-bottom:4px;">AI Tool Directory</h3>
+        <p class="text-mute" style="margin-bottom:22px;font-size:13px;">Every tool prompts on PromptRoaRs AI are built for. Tap a tool to browse its prompts.</p>
+        <div class="tool-grid" id="tool-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> PromptRoaRs AI. All rights reserved.</span>
+      <span class="text-mono">Built for creators, powered by community.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ai-services.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+    // deep-link via hash, e.g. ai-studio.html#chat
+    const hash = window.location.hash.replace('#','');
+    if(hash){
+      const target = document.querySelector(`[data-tab="${hash}"]`);
+      if(target) target.click();
+    }
+  });
+</script>
+</body>
+</html>

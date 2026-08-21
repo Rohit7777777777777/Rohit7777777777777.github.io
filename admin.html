@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — PromptRoaRs AI</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm"><span class="full">Wallet ·</span> <span data-wallet-balance></span></a>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container" id="admin-root">
+    <span class="eyebrow">Admin</span>
+    <h1 style="font-size:clamp(26px,3.4vw,36px);margin:8px 0 28px;">Platform overview</h1>
+
+    <div class="stat-grid">
+      <div class="stat-card glass"><b data-admin-stat="users">0</b><span>Total users</span></div>
+      <div class="stat-card glass"><b data-admin-stat="prompts">0</b><span>Prompts listed</span></div>
+      <div class="stat-card glass"><b data-admin-stat="gmv">₹0</b><span>Gross marketplace value</span></div>
+      <div class="stat-card glass"><b data-admin-stat="creators">0</b><span>Active creators</span></div>
+    </div>
+
+    <div class="glass ai-panel">
+      <div class="ai-panel-head">
+        <h3 style="margin:0;">Prompt moderation</h3>
+        <span class="pill"><span class="pill-dot"></span> All systems normal</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead><tr><th>Prompt</th><th>Creator</th><th>Category</th><th>Price</th><th>Sales</th><th>Status</th></tr></thead>
+          <tbody id="admin-prompts-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass ai-panel" style="margin-top:24px;">
+      <h3 style="margin-bottom:4px;">AI Engine Status</h3>
+      <p class="text-mute" style="font-size:13px;margin-bottom:16px;">Internal status of AI-powered features across the platform.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;">
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Prompt Generator</span><span class="pill-dot" style="background:var(--amber);"></span></div>
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Prompt Improver</span><span class="pill-dot" style="background:var(--amber);"></span></div>
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Chat Studio</span><span class="pill-dot" style="background:var(--amber);"></span></div>
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Recommendations</span><span class="pill-dot" style="background:var(--amber);"></span></div>
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Prompt Analysis</span><span class="pill-dot" style="background:var(--amber);"></span></div>
+        <div class="pill" style="justify-content:space-between;padding:12px 16px;"><span>Marketplace</span><span class="pill-dot"></span></div>
+      </div>
+      <p class="text-mute" style="font-size:12px;margin-top:14px;">🟡 Amber = Coming Soon (no provider connected) &nbsp;·&nbsp; 🟢 Green = Live</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> PromptRoaRs AI. All rights reserved.</span>
+      <span class="text-mono">Built for creators, powered by community.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ai-services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

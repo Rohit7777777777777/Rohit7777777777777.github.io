@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — PromptRoaRs AI</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand"><span class="brand-mark">R</span>PromptRoaRs<span style="color:var(--amber)">AI</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="ai-studio.html">AI Studio</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm"><span class="full">Wallet ·</span> <span data-wallet-balance></span></a>
+      <a href="marketplace.html" class="btn btn-primary btn-sm">Browse Prompts</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container" id="dashboard-root">
+    <span class="eyebrow">Your account</span>
+    <h1 style="font-size:clamp(26px,3.4vw,36px);margin:8px 0 28px;">Welcome back 👋</h1>
+
+    <div class="stat-grid">
+      <div class="stat-card glass"><b data-stat="owned">0</b><span>Prompts owned</span></div>
+      <div class="stat-card glass"><b data-stat="favorites">0</b><span>Favorites</span></div>
+      <div class="stat-card glass"><b data-stat="wallet">₹0</b><span>Wallet balance</span></div>
+      <div class="stat-card glass"><b data-stat="referrals">0</b><span>Referrals</span></div>
+    </div>
+
+    <div class="dash-grid">
+      <aside class="glass dash-side">
+        <a href="#library" class="active">📚 My Library</a>
+        <a href="#favorites">♡ Favorites</a>
+        <a href="#selling">💰 Selling</a>
+        <a href="#wallet">👛 Wallet</a>
+        <a href="#referral">🔗 Referral</a>
+        <a href="#notifications">🔔 Notifications</a>
+      </aside>
+
+      <div>
+        <section id="library" class="glass ai-panel" style="margin-bottom:24px;">
+          <h3>My Library</h3>
+          <div class="prompt-grid" id="owned-grid"></div>
+        </section>
+
+        <section id="favorites" class="glass ai-panel" style="margin-bottom:24px;">
+          <h3>Favorites</h3>
+          <div class="prompt-grid" id="fav-grid"></div>
+        </section>
+
+        <section id="selling" class="glass ai-panel" style="margin-bottom:24px;">
+          <h3>Selling</h3>
+          <p class="text-mute" style="font-size:13px;margin-bottom:16px;">Performance for prompts you've listed.</p>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Prompt</th><th>Sales</th><th>Price</th><th>Earnings</th><th>Status</th></tr></thead>
+              <tbody id="sales-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="wallet" class="glass ai-panel" style="margin-bottom:24px;">
+          <h3>Wallet</h3>
+          <p class="text-mute" style="font-size:13px;">Available balance</p>
+          <div style="font-family:var(--f-display);font-size:32px;color:var(--amber);margin:8px 0 16px;" data-wallet-balance></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn btn-primary btn-sm">Withdraw</button>
+            <button class="btn btn-ghost btn-sm">Add Funds</button>
+          </div>
+        </section>
+
+        <section id="referral" class="glass ai-panel" style="margin-bottom:24px;">
+          <h3>Referral Program</h3>
+          <p class="text-mute" style="font-size:13px;margin-bottom:14px;">Share your code — earn wallet credit when friends join.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <input type="text" id="referral-code" class="text-input" readonly style="max-width:220px;">
+            <button class="btn btn-amber btn-sm" id="copy-referral">Copy Code</button>
+          </div>
+        </section>
+
+        <section id="notifications" class="glass ai-panel">
+          <h3>Notifications</h3>
+          <div id="notif-list"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> PromptRoaRs AI. All rights reserved.</span>
+      <span class="text-mono">Built for creators, powered by community.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ai-services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
